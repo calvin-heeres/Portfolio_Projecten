@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <script src="data.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+</head>
+<body onload="initClock()">
+    <ul class="cards">
+
+        
+
+        <li class="card card--first">
+            <img src="img/leaf1.png" alt="">
+    
+
+            <div id="dataDiv"></div>
+
+                    <!--digital clock start-->
+        <div class="datetime">
+            <div class="date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">year</span>
+            </div>
+        <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+        </div>
+        </div>
+
+        <!--digital clock end-->
+        <script type="text/javascript">
+            function updateClock(){
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth()
+                    dnum = now.getDate(),
+                    yr = now.getFullYear()
+                    hou = now.getHours(),
+                    min = now.getMinutes()
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                    if(hou == 0){
+                        hou = 12;
+                    }
+                    if(hou > 12){
+                        hou = hou - 12;
+                        pe = "PM"
+                    }
+
+                    Number.prototype.pad = function(digits){
+                        for(var n = this.toString(); n.length < digits; n = 0 + n);
+                        return n;
+                    }
+
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+                    var ids= ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period" ];
+                    var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+                    for(var i = 0; i < ids.length; i++)
+                    document. getElementById(ids[i]).firstChild.nodeValue = values[i];
+            }
+            
+            function initClock(){
+                updateClock();
+                window.setInterval("updateClock()", 1);
+
+            }
+        </script>
+    <!--Hier eindigt de code van de klok-->
+
+        </li>
+
+      
+
+        </li>
+        <li class="card card--second">
+            <canvas id="myChart"></canvas>
+        </li>
+        <li class="card card--fourth">
+            <p id='location'></p>
+            <p id='weather'></p>
+            <p id='temp'></p>
+            <p id='sunrise'></p>
+            <p id='sunset'></p>
+        </li>
+        <li class="card card--fifth">
+            <div class="chartbox1">
+            <canvas id="myChart2"></canvas>
+            </div>
+        </li>
+        <li class="card card--sixth">
+            <h2 id="time"></h2>
+            <h2 id="date" id="time"></h2>
+        </li>
+
+        <li class="card card--seventh">
+            <div class="chartbox">
+       <canvas id="myChart1"></canvas>
+            </div>
+        </li>
+
+        
+    </ul>
+</body>
+</html>

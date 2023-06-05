@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/8a83e23264.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="js--checkoutWindow" class="checkout a-popup">
+        <ul class="checkout__list">
+            <li class="checkout__listItem">
+                <img src="/img/Buzz.jpg" alt="" class="checkout__image">
+                <p class="checkout__title">Buzz Lightyear</p>
+                <p id="js--amount-buzz" class="checkout__amount"></p>
+                <h2 id="checkout__buzz" class="checkout__h2"></h2>
+            </li>
+            <li class="checkout__listItem">
+                <img src="/img/Sully.jpg" alt="" class="checkout__image">
+                <p class="checkout__title">Sully</p>
+                <p id="js--amount-sully" class="checkout__amount"></p>
+                <h2 id="checkout__sully" class="checkout__h2"></h2>
+            </li>
+            <li class="checkout__listItem">
+                <img src="/img/Edna.jpg" alt="" class="checkout__image">
+                <p class="checkout__title">Edna</p>
+                <p id="js--amount-edna" class="checkout__amount"></p>
+                <h2 id="checkout__edna" class="checkout__h2"></h2>
+            </li>
+        </ul>
+    </section>
+    <article class="modal a-popup" id="js--shoppingModal">       	
+        &#10003;Added to Cart
+    </article>
+    <button id="js--checkoutButton" class="glow-on-hover">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <div class="shoppingCart__message">0</div>
+    </button>
+    <main>
+        <ul class="games">
+            <li class="games__game a-popup">
+                <figure class="games__figure">
+                    <img src="/img/Buzz.jpg" alt="" class="games__img">
+                </figure>
+                <section class="games__body">
+                    <h2 class="games__h2">€49</h2>
+                    <h3 class="games__h3">Buzz lightyear - Pixar</h3>
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button data-product="buzz" class="games__button">Add to Cart</button>
+                </section>
+            </li>
+            <li class="games__game a-popup">
+                <figure class="games__figure">
+                    <img src="/img/Sully.jpg" alt="" class="games__img">
+                </figure>
+                <section class="games__body">
+                    <s>€59</s>
+                    <h2 class="games__h2">€39</h2>
+                    <h3 class="games__h3">Sully - Pixar</h3>
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button data-product="sully" class="games__button">Add to Cart</button>
+                </section>
+            </li>
+            <li class="games__game games__game--third a-popup">
+                <figure class="games__figure">
+                    <img src="/img/Edna.jpg" alt="" class="games__img">
+                </figure>
+                <section class="games__body">
+                    <h2 class="games__h2">€59</h2>
+                    <h3 class="games__h3">Edna - Pixar</h3>
+                    <div class="games__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <button data-product="edna" class="games__button">Add to Cart</button>
+                </section>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

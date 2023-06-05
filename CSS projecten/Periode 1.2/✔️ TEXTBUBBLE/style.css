@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-color: #34be82;
+}
+
+body{
+    background:var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.textbubble{
+    position: relative;
+    animation-name: popup;
+    animation-duration: 0.8s;
+}
+
+.textbubble:hover .circle{ /* Als ik over de textbubble hover dan wil ik iets aanpassen aan de .circle*/
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.bubble{
+    width: 270px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+:root{
+    --background-color1: black;
+}
+
+.circle{
+    width: 30px;
+    height: 30px;
+    background:var(--background-color1);
+    border-radius: 50%;
+}
+
+.second{
+    animation-delay: 0.5s;
+}
+
+.third{
+    animation-delay: 1s;
+}
+
+.triangle, .triangleBackground{ /* de triangle en de triangleBackground hebben .... */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+.triangle{
+    width: 40px;
+    height: 40px;
+    background: white;
+    top: 96%;
+}
+
+.triangleBackground{
+    width: 50px;
+    height: 50px;
+    background: black;
+    top: 97%;
+}
+
+@keyframes popup{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes typing {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

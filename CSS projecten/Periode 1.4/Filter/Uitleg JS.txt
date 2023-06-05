@@ -1,0 +1,55 @@
+UITLEG FRO FILTER OPDRACHT
+
+
+// soulslike filter
+let FPSFilter = document.getElementById("checkbox-FPS");
+FPSFilter.onchange = function(){
+     if(FPSFilter.checked === true){
+        for (let i = 0; i < allGames.length; i++){
+            if(allGames[i].dataset.category === "FPS"){
+            allGames[i].style.display = "block";
+            }
+        }
+    }
+    else{
+        for(let i = 0; i < allGames.length; i++){
+            if(allGames[i].dataset.category === "FPS"){
+            allGames[i].style.display = "none";
+            }
+        }
+    }
+}
+
+
+Ophalen,
+
+let FPSFilter = document.getElementById("checkbox-FPS");
+
+
+zodra die veranderd een function,
+
+FPSFilter.onchange = function(){
+
+
+zodra FPSFilter gechecked is zoek alle games met filter FPS in de index.html 
+(dit is door de class "dataset-category"),
+
+     if(FPSFilter.checked === true){
+        for (let i = 0; i < allGames.length; i++){
+            if(allGames[i].dataset.category === "FPS"){
+
+
+geef alle games die FPS zijn style display block,
+
+            allGames[i].style.display = "block";
+
+Anders:
+
+    else{
+
+als de filter niet gechecked is, haal alle games met FPS op en style display none 
+(dit zorgt ervoor dat het niks laat zien),
+
+        for(let i = 0; i < allGames.length; i++){
+            if(allGames[i].dataset.category === "FPS"){
+            allGames[i].style.display = "none";
